@@ -1,0 +1,207 @@
+
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Header using Flexbox */
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: white;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.logo span {
+    color: orange;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #e74c3c;
+}
+
+.login-btn,
+button {
+    border: none;
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 55px 15px;
+    background-color: #ffe5d9;
+}
+
+.hero h1 {
+    font-size: clamp(24px, 5vw, 40px);
+    margin-bottom: 15px;
+}
+
+.hero p {
+    margin-bottom: 20px;
+}
+
+.hero input {
+    padding: 12px;
+    width: min(90%, 350px);
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* Categories */
+.categories {
+    padding: 35px 5%;
+    text-align: center;
+}
+
+.categories h2,
+.restaurants h2 {
+    margin-bottom: 25px;
+}
+
+.category-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.category-list div {
+    background-color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #ddd;
+}
+
+/* Restaurant Section */
+.restaurants {
+    padding: 35px 5%;
+    container-type: inline-size;
+    container-name: restaurant-section;
+}
+
+.restaurants h2 {
+    text-align: center;
+}
+
+/* CSS Grid */
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+}
+
+.restaurant-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px #ddd;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 8px 18px #bbb;
+}
+
+.restaurant-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 18px;
+}
+
+.card-content h3 {
+    margin-bottom: 10px;
+    color: #e74c3c;
+}
+
+.card-content p {
+    margin-bottom: 12px;
+    color: #666;
+}
+
+.card-content span {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.card-content button {
+    width: 100%;
+}
+
+/* Container Query */
+@container restaurant-section (min-width: 550px) {
+    .restaurant-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablet Responsive Design */
+@media (min-width: 768px) {
+    .restaurant-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero {
+        padding: 75px 20px;
+    }
+}
+
+/* Desktop Responsive Design */
+@media (min-width: 1100px) {
+    .restaurant-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .header {
+        padding: 20px 8%;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+    line-height: 1.8;
+}
